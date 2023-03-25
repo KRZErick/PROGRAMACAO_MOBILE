@@ -1,6 +1,8 @@
 package PRIMEIRO_BIMESTRE.ED3
 
-class EX1(
+import java.time.LocalTime
+
+open class Conta(
     val cliente: String,
     var saldo: Double,
     val numero: String,
@@ -30,30 +32,34 @@ class EX1(
         }
     }
 
-    fun imprimirExtrato() {
+    open fun imprimirExtrato() {
         println("=== Extrato ===")
         println("Cliente: $cliente")
         println("Número da conta: $numero")
         println("Agência: $agencia")
         println("Saldo: R$$saldo")
-        println()
+    }
+}
+
+
+class ContaPoupanca(cliente: String,  saldo: Double, numero: String, agencia: String) : Conta (cliente, saldo, numero, agencia){
+    fun aplicarJuros() {
+        val juros = saldo * 0.003
+        depositar(juros)
     }
 
+    override fun imprimirExtrato() {
+        super.imprimirExtrato()
+        println("Tipo da conta: Poupança")
+    }
 }
 
 fun main() {
-    val conta1 = EX1("Erick Krzyzanovski", 1000.0, "121212", "12345")
-    val conta2 = EX1("Joaozinho da Silva", 500.0, "321321", "54321")
-
-    conta1.imprimirExtrato()
-    conta2.imprimirExtrato()
-
-    conta1.depositar(400.0)
-
-    conta1.retirar(300.0)
-
-    conta1.transferir(300.0, conta2)
-
-    conta1.imprimirExtrato()
-    conta2.imprimirExtrato()
+    val contaPoupanca = ContaPoupanca("Erick Krzyzanovski", 1000.0, "121212", "12345")
+    println()
+    contaPoupanca.depositar(500.0)
+    contaPoupanca.retirar(200.0)
+    contaPoupanca.aplicarJuros()
+    println()
+    contaPoupanca.imprimirExtrato()
 }

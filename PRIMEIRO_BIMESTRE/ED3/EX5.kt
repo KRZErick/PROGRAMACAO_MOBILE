@@ -1,11 +1,25 @@
 package PRIMEIRO_BIMESTRE.ED3
 
-class EX1(
+interface Boleto {
+    fun imprimirBoleto(valor: Double)
+}
+
+open class EX5Conta(
     val cliente: String,
     var saldo: Double,
     val numero: String,
     val agencia: String
-) {
+) : Boleto{
+    override fun imprimirBoleto(valor: Double) {
+        println("==== Boleto ====")
+        println("Cliente: $cliente")
+        println("Valor: R$ $valor")
+        println()
+        println("Codigo de pagamento")
+        println("12345.1235.12345.12345.12345")
+        println("|||||||||||||||||||||||||||||")
+    }
+
     fun depositar(valor: Double) {
         saldo += valor
         println("Depósito de R$$valor realizado com sucesso!")
@@ -20,7 +34,7 @@ class EX1(
         }
     }
 
-    fun transferir(valor: Double, contaDestino: EX1) {
+    fun transferir(valor: Double, contaDestino: EX5Conta) {
         if (saldo >= valor) {
             saldo -= valor
             contaDestino.saldo += valor
@@ -30,30 +44,17 @@ class EX1(
         }
     }
 
-    fun imprimirExtrato() {
+    open fun imprimirExtrato() {
         println("=== Extrato ===")
         println("Cliente: $cliente")
         println("Número da conta: $numero")
         println("Agência: $agencia")
         println("Saldo: R$$saldo")
-        println()
     }
-
 }
 
-fun main() {
-    val conta1 = EX1("Erick Krzyzanovski", 1000.0, "121212", "12345")
-    val conta2 = EX1("Joaozinho da Silva", 500.0, "321321", "54321")
 
-    conta1.imprimirExtrato()
-    conta2.imprimirExtrato()
-
-    conta1.depositar(400.0)
-
-    conta1.retirar(300.0)
-
-    conta1.transferir(300.0, conta2)
-
-    conta1.imprimirExtrato()
-    conta2.imprimirExtrato()
+fun main(){
+    val minhaConta = EX5Conta("Erick Krzyzanovski", 1000.0, "121212", "12345")
+    minhaConta.imprimirBoleto(100.0)
 }
