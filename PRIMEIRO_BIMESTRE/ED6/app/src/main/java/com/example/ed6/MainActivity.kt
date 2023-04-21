@@ -40,12 +40,8 @@ class MainActivity : AppCompatActivity() {
         btn_Tchau.setOnClickListener{
             val Numero_Telefone = "+5541992818738"
             val Menssagem = "Tchau!"
+
             val intent = Intent(Intent.ACTION_VIEW)
-            val whatsappIntent = Intent(Intent.ACTION_SEND)
-            whatsappIntent.type = "image/*"
-            whatsappIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse("file:///sdcard/image.jpg"))
-            whatsappIntent.setPackage("com.whatsapp")
-            startActivity(whatsappIntent)
             intent.data = Uri.parse("https://wa.me/$Numero_Telefone/?text=$Menssagem")
             startActivity(intent)
         }
