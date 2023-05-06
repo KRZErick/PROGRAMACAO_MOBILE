@@ -1,0 +1,23 @@
+Scrollview - Dependendo do tamanho do dispositivo não é recomendado.
+Linear Layout - Principais são layout_width e o layout_height temos três atributos match_parent que é expandir na altura e largura com base no componente pai, wrap_content seria o tamanho do meu conteúdo para os “filhos” e absoluty. Nunca utilizar absoluty para não causar problemas de responsividade.
+ImageView - Não será obrigatório largura e altura. Se atentar para não utilizar espessura de fontes dependendo do contraste das cores.
+TextView – Para deixar texto estático.
+Dimens - utilizado com valores já pré setados para uma grid de uma tela e podem ser criados outros para dispositivos com dimensões diferentes.
+Color - com colores já definidas e pode ser criado novos arquivos, por exemplo para criar um modo noturno para aplicação.
+Margin – Top, Bottom, Start, End.
+Para utilizar pacotes de terceiros, colocar o caminho inteiro do pacote na hora que for de utilizalo.
+TextInputLayout - Caixa de texto com valor representando para o que o campo se trata.
+TextInputEditText 
+imeOptions – Pode definir o que o Enter fara na aplicação como passar para o próximo ou finalizar processo e mundo a representação gráfica.
+InputType – Editar o teclado para puxar dependendo do campo que vai ser preenchido. Como colocar um teclado numérico para inserir um número de telefone.
+Linear-Layout – Pode ser utilizado dentro de outro para criar um campo em linha que inserindo um componente dentro ele se comporta internamente.
+HorizontalScrollView – Criar um Scroll na horizontal. Na maioria das vezes utilizado com o Linear-Layout.
+Para texto utilizar sp e para outros componentes utilizar dp.
+contentDescription – Para criar uma descrição na ausência da informação.
+FremeLayout – Sobrepõem os filhos.
+Conteiner – Agregados aos outros.
+Recurso - @+nome para cria-lo.
+findViewById - Para acessar qualquer atributo criado.
+Adicionar nova biblioteca: colocar o código na buid.gradle(Module)
+Imagens - Qualquer tipo de extensão porem apenas do android 8 funciona as com (.svg). Para imagens sempre tem que definir uma restrição na vertical ou na horizontal. 
+Pode ancorar o componente na interface gráfica, selecionando as restrições. Colocar largura 0dp para ocupar toda a área da restrição.
