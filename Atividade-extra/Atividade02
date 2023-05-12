@@ -1,0 +1,13 @@
+Aula 02 - 2 Bimestre
+
+- Sempre cadastrar as atividades no androidManifest.
+- Padrão de nome para colocar no resource seria o título da tela.
+- Mudar cor do btn seria no backgroundtint.
+- Quando aparecer a linha em amarelo Alt + Enter para visualizar o erro que está ocorrendo.
+- Data binding necessários algumas bibliotecas.
+- Configuar databinding - Habilitar o dataBinding no gradle, Modificar os arquivos de Layout, Substituir a chamada do setContentView() - Fazer isso no buildGrade.
+- Data binding é uma técnica geral que une duas fontes de dados/informações e as mantém em sincronia em um processo que estabelece uma conexão entre UI da aplicação e a lógica de negócio.
+- Lateint para variável nunca ser nula.
+- Componente setOnClickListener() para tratamento de eventos, os eventos são disparados pelos componentes após a interação do user.
+- Via função Lambda - para eventos curtos e não precisam ser reaproveitados.
+- Via método - para eventos curtos e podem ser reaproveitados.
