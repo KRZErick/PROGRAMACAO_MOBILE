@@ -1,0 +1,39 @@
+Atividade03
+
+Fragmento
+
+- Proposta, basicamento juntar varias activity
+
+onAttach() Uni o fragmento com a atividade
+onCreate() O elemento foi criado
+onCreateView() Criar a tela
+onActivityCreated() Atividade já foi criada
+onStart() 
+onResume()
+Fragment is active - Interagindo com ele
+onPause()
+onStop()
+onDestroyView()
+onDestroy()
+onDetach()
+Fragmento is destroyed
+
+- Valor absoluto apenas para img, quando for um btn utilizar warp_containt
+
+- Para o fragmento
+- Criar pasta menu, apos resourceDirector
+- Vector para adicionar mais icones
+- Material Desing icons para coletar mais icones, apenas copiar o xml e criar um novo arquivo xml dentro da pasta drawable 
+- ifRoom se tiver espaço ele coloca na tollbar, no caso no exemplo de um menu
+- always apenas uma forma
+- showAsAction: define como vamos exibir o menu superior
+- opp:showAsAction
+
+
+
+
+
+
+
+
+
