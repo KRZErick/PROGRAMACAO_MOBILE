@@ -33,7 +33,11 @@ Fragmento is destroyed
 
 
 
-
+- Para construir um fragmento, usamos o padrão builder
+- Ele permite que todos os fragmentos sejam criados de maneira uniforme, padroniza a passagem de parametros
+- Função estática para a construção dos fragmentos
+- JvaStatic
+- !! forçar uma variavel a ser nula
 
 
 
