@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,6 +9,10 @@
     tools:context=".MainActivity"
     tools:ignore="MissingClass">
 
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image"
@@ -283,182 +287,166 @@
         app:layout_constraintStart_toStartOf="@+id/linearLayoutDestaques"
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutDestaques">
 
-        <Button
+        <ImageView
             android:id="@+id/button6"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="0dp"
             android:layout_weight="1"
-            android:backgroundTint="#FFFFFF"
-            app:icon="@android:drawable/ic_dialog_dialer"
-            app:iconTint="#424141"
-            app:iconTintMode="add"
-            app:rippleColor="#4A4A4A" />
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/baseline_grid_on_24"
+            android:background="@android:color/transparent"
+            android:padding="8dp" />
 
-        <Button
+        <ImageView
             android:id="@+id/button7"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="0dp"
             android:layout_weight="1"
-            android:backgroundTint="#FFFFFF"
-            app:icon="@android:drawable/ic_menu_my_calendar"
-            app:iconTint="#000000"
-            app:iconTintMode="src_in"
-            app:rippleColor="#000000" />
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/baseline_live_tv_24"
+            android:background="@android:color/transparent"
+            android:padding="8dp" />
 
-        <Button
+        <ImageView
             android:id="@+id/button8"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="0dp"
             android:layout_weight="1"
-            android:backgroundTint="#FFFFFF"
-            app:icon="@drawable/baseline_mood_24"
-            app:iconTint="#424141"
-            app:iconTintMode="src_in"
-            app:rippleColor="#4A4A4A" />
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/baseline_mood_24"
+            android:background="@android:color/transparent"
+            android:padding="8dp" />
 
-        <Button
+        <ImageView
             android:id="@+id/button9"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:layout_marginStart="20dp"
             android:layout_marginEnd="10dp"
-            android:layout_weight="1"
-            android:backgroundTint="#FFFFFF"
-            app:icon="@drawable/baseline_perm_contact_calendar_32"
-            app:iconPadding="5dp"
-            app:iconTint="#424141"
-            app:iconTintMode="src_in"
-            app:rippleColor="#4A4A4A" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayoutFotos"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="10dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutSelecionar">
-
-        <LinearLayout
-            android:id="@+id/linearLayoutFotos1"
-            android:layout_width="wrap_content"
-            android:layout_height="115dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="2dp"
-                android:layout_weight="1"
-                android:scaleType="matrix"
-                android:src="@drawable/destaques" />
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="2dp"
-                android:layout_weight="1"
-                android:scaleType="matrix"
-                android:src="@drawable/destaques" />
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:scaleType="matrix"
-                android:src="@drawable/destaques" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayoutFotos2"
-            android:layout_width="wrap_content"
-            android:layout_height="115dp"
-            android:layout_marginTop="2dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="2dp"
-                android:layout_weight="1"
-                android:scaleType="matrix"
-                android:src="@drawable/destaques" />
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="2dp"
-                android:layout_weight="1"
-                android:scaleType="matrix"
-                android:src="@drawable/destaques" />
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:scaleType="matrix"
-                android:src="@drawable/destaques" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayoutFotos3"
-            android:layout_width="wrap_content"
-            android:layout_height="115dp"
-            android:layout_marginTop="2dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="2dp"
-                android:layout_weight="1"
-                android:scaleType="matrix"
-                android:src="@drawable/destaques" />
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="2dp"
-                android:layout_weight="1"
-                android:scaleType="matrix"
-                android:src="@drawable/destaques" />
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:scaleType="matrix"
-                android:src="@drawable/destaques" />
-
-
-        </LinearLayout>
-
+            android:src="@drawable/baseline_perm_contact_calendar_24"
+            android:background="@android:color/transparent"
+            android:padding="8dp" />
 
     </LinearLayout>
 
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayoutFotos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutSelecionar">
 
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="0dp"
+                android:layout_height="115dp"
+                android:layout_marginEnd="2dp"
+                android:scaleType="matrix"
+                android:src="@drawable/destaques"
+                app:layout_constraintEnd_toStartOf="@+id/imageView2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="0dp"
+                android:layout_height="115dp"
+                android:layout_marginEnd="2dp"
+                android:scaleType="matrix"
+                android:src="@drawable/destaques"
+                app:layout_constraintEnd_toStartOf="@+id/imageView3"
+                app:layout_constraintStart_toEndOf="@+id/imageView1"
+                app:layout_constraintTop_toTopOf="parent" />
 
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="0dp"
+                android:layout_height="115dp"
+                android:scaleType="matrix"
+                android:src="@drawable/destaques"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
+                app:layout_constraintTop_toTopOf="parent" />
 
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="0dp"
+                android:layout_height="115dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:scaleType="matrix"
+                android:src="@drawable/destaques"
+                app:layout_constraintEnd_toStartOf="@+id/imageView5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView1" />
 
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="0dp"
+                android:layout_height="115dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:scaleType="matrix"
+                android:src="@drawable/destaques"
+                app:layout_constraintEnd_toStartOf="@+id/imageView6"
+                app:layout_constraintStart_toEndOf="@+id/imageView4"
+                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="0dp"
+                android:layout_height="115dp"
+                android:layout_marginTop="2dp"
+                android:scaleType="matrix"
+                android:src="@drawable/destaques"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView3"
+                app:layout_constraintStart_toEndOf="@+id/imageView5"/>
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="0dp"
+                android:layout_height="115dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:scaleType="matrix"
+                android:src="@drawable/destaques"
+                app:layout_constraintEnd_toStartOf="@+id/imageView8"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="0dp"
+                android:layout_height="115dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:scaleType="matrix"
+                android:src="@drawable/destaques"
+                app:layout_constraintEnd_toStartOf="@+id/imageView9"
+                app:layout_constraintStart_toEndOf="@+id/imageView7"
+                app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="0dp"
+                android:layout_height="115dp"
+                android:layout_marginTop="2dp"
+                android:scaleType="matrix"
+                android:src="@drawable/destaques"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView6"
+                app:layout_constraintStart_toEndOf="@+id/imageView8"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
