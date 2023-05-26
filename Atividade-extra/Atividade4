@@ -1,0 +1,66 @@
+Banco de Dados
+
+- Banco de Dados Relacional: MySQL, PostgreSQL
+
+
+- Banco de Dados noSQL: Firebase
+
+
+
+- Servidor por comunicação HTTP
+- Servidor de aplicação : comunicação TCP/UDP
+- Protocolos: 
+- SOAP usa (XML + HTTP) para comunicação
+- XML composto por elementos e atributos
+- REST utilizado para criação de web-services
+- Cliente fornece interação com o usuario
+- Clientes magros:
+- Compreendem uma única camada, nâo apresentam código de aplicação personalizado, são totalmente dependentes do servidor
+, utilizam navegadores web.
+- Clientes gordos:
+- Possuem até três camadas, apresentação interface com usuário, nogócios lógica de negócios,
+- Aplicações:
+-           Desenvolvidos diretamente para a plataforma, alto desempenho, utlização de todo ecossistema
+, necessita de mair esforço de desenvilvimento.
+- compile-to-native: ambiente de terceiros, aplicação compilada para diversas plataformas, dificuldade no domínio dos frameworks, 
+ex: React Native, Native Script, Flutter, Xamarin.
+- Híbridas: Fácil para desenvilvedores web, executa em uma web-view - pode ser lento, Ex: PhoneGap, Cordova, Sencha, Ionic.
+- Progressive Web App (PWA): Fácil de desenvolver, não são apicativos reais, executa no navegador, Exemplos: HTML/CSS
+
+Parte Cliente Servidor
+- Http: Protoco para troca de mensagens na web.
+- Rest: não pode ter uma sessão
+- Entidades = URLs: Aluno, Livro, Professor, Produto
+- Ações Comandos HTTP: GET, POST, DELETE, PUT
+----------------
+- Comando Http  - Operação BD   - /gatos                - /gatos/3
+- POST:         Create          Cria um gato novo       -
+- GET:          Read            Lista todos os gatos    Lista delalhes do gato 3
+- PUT PATCH:    Update          -                       altera todos os detalhes do gato 3
+- DELETE:       Delete          Deleta todos os gatos   Deleta o gato 3
+----------------
+- GET: não altera o estado do servidor
+- POST: pode alterar o estado a qualquer momento
+- PUT, PATCH e DELETE são idempotente, chamadas repetidas nao importam.
+- Boas praticas: Manter nomes no plural, Enviar abstrações, Paginação, Subconjunto de campos
+
+- BLOB: 
+- RAW: não pode ser combindado com outros tipos, para HTTP se utiliza o MIME para identificação
+- URL: resquest separado para acesso
+- Encoding Base64: Aumenta o tamanho em 33%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
