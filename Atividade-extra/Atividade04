@@ -49,6 +49,10 @@ Parte Cliente Servidor
 - URL: resquest separado para acesso
 - Encoding Base64: Aumenta o tamanho em 33%
 
+- Códigos de erro: 
+- 200 - OK, 201 - Criado, 401 - Acesso não altorizado, 404 - Recurso não encontrado, 500 - Erro interno bug
+
+- Autenticação, simples, assinturas de APIs, OAuth 2.0, JWT.
 
 
 
