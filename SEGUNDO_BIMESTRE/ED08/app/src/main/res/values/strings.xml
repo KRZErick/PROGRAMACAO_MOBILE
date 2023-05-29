@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ED08</string>
+    <string name="menu_tela1">Order</string>
+    <string name="menu_tela2">Consultation</string>
+    <string name="menu_tela3">Nutri Tracker</string>
+    <string name="menu_tela4">Profile</string>
+    <string name="menu_salvar">Salvar</string>
+    <string name="menu_deletar">Deletar</string>
+</resources>

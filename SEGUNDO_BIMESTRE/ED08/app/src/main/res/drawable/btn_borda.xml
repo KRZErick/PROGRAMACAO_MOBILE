@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <selector xmlns:android="http://schemas.android.com/apk/res/android">
+        <item>
+            <shape>
+                <solid android:color="#FFFFFF" /> <!-- Cor de fundo do botão -->
+                <stroke android:color="#000000"
+                android:width="2dp" /> <!-- Largura da borda do botão -->
+                <corners android:radius="4dp" /> <!-- Raio dos cantos do botão -->
+            </shape>
+        </item>
+    </selector>
+
+
+</selector>

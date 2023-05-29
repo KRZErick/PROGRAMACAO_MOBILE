@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <!--
+        showAsAction: define como vamos exibir o menu superior
+
+        app:showAsAction="always|withText" > sempre visivel e com o label
+    -->
+
+    <item
+        app:showAsAction="ifRoom"
+        android:id="@+id/action_salvar"
+        android:icon="@drawable/ic_salvar"
+        android:title="@string/menu_salvar"/>
+
+    <item
+        android:id="@+id/action_deletar"
+        android:icon="@drawable/mexicano"
+        android:title="@string/menu_deletar"
+        app:showAsAction="ifRoom" />
+
+</menu>
