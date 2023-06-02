@@ -1,3 +1,14 @@
+02/06/23
 
 - Deve se criar uma thread para as chamadas, pra nao ocasionar o fechamento do sistema.
 - Volley para chamada da API.
+
+Android Studio
+
+- Todo ano ficar atualizando o sdk para os aplicativos na Play Store.
+- Retrofit: Importar as bibliotecas para chamadas webserver.
+- Gson: também as para serializar objetos Java em JSON.
+- Encapsulado no arquivo de inicialização da API NetworkManager.kt.
+- ApiServer.kt: Interface que mapeia.
+- Criar classes para os dados da API.
+- jsonchema2pojo para criar as classes apenas colando o codigo da API.
