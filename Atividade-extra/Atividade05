@@ -1,0 +1,3 @@
+
+- Deve se criar uma thread para as chamadas, pra nao ocasionar o fechamento do sistema.
+- Volley para chamada da API.
