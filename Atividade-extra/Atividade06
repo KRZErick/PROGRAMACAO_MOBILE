@@ -1,5 +1,7 @@
 16-06-2023
 
+Persistências de Dados
+
 Arquivo Local
 - txt(.csv, .json, .xml)
 - dat(binário)
@@ -14,7 +16,7 @@ Arquivo Local
 -- Atualização dos dados
 
 SqLite
-- Vantaguens
+- Vantagens
 -- Maior volume de dados
 -- Consultas customisadas
 -- Fácil insert/delete/update
@@ -25,4 +27,28 @@ SqLite
 -- Criação de código limitado
 -- Atualização de banco
 
-Sh
+Shared Preferences
+- Vantagens 
+-- Grava chave e valores
+-- Preferencia na aplicação
+-- Serve como cache
+-- De fácil uso
+- Desvantagens 
+-- Volumes de dados limitado
+-- Desviando funcionalidade
+
+API (firebase)
+- Vantagens
+-- Maior armazenamento de dados
+- Desvantagens
+-- Necessita de internet 100% do tempo
+
+
+
+
+
+
+
+
+
+
