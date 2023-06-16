@@ -1,0 +1,28 @@
+16-06-2023
+
+Arquivo Local
+- txt(.csv, .json, .xml)
+- dat(binário)
+- Vantagens
+-- Sem Internet
+-- Velocidade
+-- Fácil configuração
+- Desvantagens
+-- Tamanho disco limitado
+-- Leitura
+-- Não conseguir fazer relacionamento com outros dados 
+-- Atualização dos dados
+
+SqLite
+- Vantaguens
+-- Maior volume de dados
+-- Consultas customisadas
+-- Fácil insert/delete/update
+-- Relacionamento complexo
+-- Mais tipos de dados
+- Desvantagens
+-- Pesado
+-- Criação de código limitado
+-- Atualização de banco
+
+Sh
