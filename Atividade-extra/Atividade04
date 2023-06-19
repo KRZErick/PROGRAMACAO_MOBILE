@@ -21,7 +21,7 @@ Banco de Dados
 - Possuem até três camadas, apresentação interface com usuário, nogócios lógica de negócios,
 - Aplicações:
 -           Desenvolvidos diretamente para a plataforma, alto desempenho, utlização de todo ecossistema
-, necessita de mair esforço de desenvilvimento.
+, necessita de maior esforço de desenvolvimento.
 - compile-to-native: ambiente de terceiros, aplicação compilada para diversas plataformas, dificuldade no domínio dos frameworks, 
 ex: React Native, Native Script, Flutter, Xamarin.
 - Híbridas: Fácil para desenvilvedores web, executa em uma web-view - pode ser lento, Ex: PhoneGap, Cordova, Sencha, Ionic.
