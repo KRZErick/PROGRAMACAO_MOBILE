@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ============================================================================ -->
+    <!-- Variáveis de amarração                                                       -->
+    <!-- ============================================================================ -->
+    <data>
+
+        <variable
+            name="filmes"
+            type="com.example.ed09_ate_11.models.Filmes" />
+    </data>
+
+    <!-- ============================================================================ -->
+    <!-- Layout da tela                                                               -->
+    <!-- ============================================================================ -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/filmes_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_normal"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:layout_marginEnd="@dimen/spacing_normal"
+        android:layout_marginBottom="@dimen/spacing_small"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/spacing_normal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/comentarios_img_imagem"
+                android:layout_width="@dimen/image_small"
+                android:layout_height="@dimen/image_small"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/comentarios_txt_nome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-black"
+                android:maxLines="1"
+                android:text="@{filmes.name}"
+                android:textSize="@dimen/font_large"
+                android:typeface="sans"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/comentarios_img_imagem"
+                app:layout_constraintTop_toTopOf="@+id/comentarios_img_imagem"
+                tools:text="Matrix" />
+
+            <TextView
+                android:id="@+id/comentarios_txt_url"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{filmes.url}"
+                android:textSize="@dimen/font_small"
+                android:typeface="sans"
+                app:layout_constraintEnd_toEndOf="@+id/comentarios_txt_nome"
+                app:layout_constraintStart_toStartOf="@+id/comentarios_txt_nome"
+                app:layout_constraintTop_toBottomOf="@+id/comentarios_txt_nome"
+                tools:text="Teste" />
+
+            <ImageView
+                android:id="@+id/comentarios_img_share"
+                style="?android:actionButtonStyle"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:contentDescription="@string/app_btn_compartilhar"
+                android:focusable="true"
+                android:src="@drawable/baseline_share_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/comentarios_txt_nome"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</layout>
