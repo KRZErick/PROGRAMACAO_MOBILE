@@ -22,7 +22,7 @@ class ComentariosRecyclerAdapter(
         val comentarios = comentarios[position]
         holder.binding.comentarios = comentarios
 
-        holder.binding.comentariosTxtId.setOnClickListener {
+        holder.binding.comentariosTxtComentarios.setOnClickListener {
             evento.onComentarioClick(comentarios)
         }
 

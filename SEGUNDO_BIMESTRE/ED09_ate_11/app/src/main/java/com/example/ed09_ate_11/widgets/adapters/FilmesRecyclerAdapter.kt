@@ -3,6 +3,7 @@ package com.example.ed09_ate_11.widgets.adapters
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.ed09_ate_11.models.Filmes
@@ -53,13 +54,15 @@ class FilmesRecyclerAdapter (
             evento.onFilmesClick(filme)
         }
 
+
         // Carrega a imagem do filme
         Glide.with(holder.itemView)
             .load(filme.images?.small)
-            .centerCrop()
+            /*.centerCrop()*/
             .placeholder(R.drawable.ic_placeholder)
             .into(holder.binding.filmesImgImagem);
         Log.d(TAG, "Img Filme: ${filme.images?.small}")
+        Log.d(TAG, "Img Filme: ${holder.binding.filmesImgImagem}")
     }
 
     /**

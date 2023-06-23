@@ -3,7 +3,7 @@ package com.example.ed09_ate_11.models
 import com.google.gson.annotations.SerializedName
 
 data class Comentarios (
-    @SerializedName("comment") var Comentarista: Comentarista? = null,
+    @SerializedName("comments") var Comentarista: Comentarista? = null,
 )
 
 data class Comentarista (

@@ -31,21 +31,15 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#673AB7"
             android:padding="@dimen/spacing_normal">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/filmes_img_imagem"
-                android:layout_width="185px"
-                android:layout_height="104px"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:src="@tools:sample/avatars" />
 
             <TextView
                 android:id="@+id/filmes_txt_nome"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginStart="10dp"
                 android:ellipsize="end"
                 android:fontFamily="sans-serif-black"
                 android:maxLines="1"
@@ -82,7 +76,16 @@
                 android:focusable="true"
                 android:src="@drawable/baseline_share_24"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/filmes_txt_nome"/>
+                app:layout_constraintEnd_toEndOf="@+id/filmes_txt_nome"
+                app:layout_constraintTop_toBottomOf="@+id/filmes_txt_url" />
+
+            <ImageView
+                android:id="@+id/filmes_img_imagem"
+                android:layout_width="@dimen/image_larger"
+                android:layout_height="@dimen/image_larger"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

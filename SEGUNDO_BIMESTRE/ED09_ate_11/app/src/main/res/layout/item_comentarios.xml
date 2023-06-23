@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/spacing_normal">
 
-            <TextView
+            <!--<TextView
                 android:id="@+id/comentarios_txt_id"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
                 android:typeface="sans"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="Matrix" />
+                tools:text="Matrix" />-->
 
             <TextView
                 android:id="@+id/comentarios_txt_comentarios"
@@ -56,8 +56,8 @@
                 android:text="@{comentarios.comentarista.comment}"
                 android:textSize="@dimen/font_small"
                 android:typeface="sans"
-                app:layout_constraintStart_toStartOf="@+id/comentarios_txt_id"
-                app:layout_constraintTop_toBottomOf="@+id/comentarios_txt_id"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:text="Teste" />
 
 

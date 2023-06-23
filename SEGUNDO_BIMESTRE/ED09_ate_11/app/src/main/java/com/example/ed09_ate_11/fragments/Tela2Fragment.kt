@@ -82,14 +82,14 @@ class Tela2Fragment : Fragment(){
 
                 // Se não for mais possível realizar o scroll para baixo, chama o webservice
                 if (!recyclerView.canScrollVertically(1)) { //1 for down
-                    carregarEpisodios()
+                    carregarComentarios()
                 }
             }
         })
 
         // Chamada para o webservice
         // A resposta do webservice vai atualizar o recycler view
-        carregarEpisodios()
+        carregarComentarios()
 
     }
 
@@ -101,7 +101,7 @@ class Tela2Fragment : Fragment(){
 /**
  * Chama o webservice para carregar mais episódios.
  */
-private fun carregarEpisodios() {
+private fun carregarComentarios() {
     Log.d(TAG, "carregarEpisodios: ")
 
     // Verifica se chegou na última página
