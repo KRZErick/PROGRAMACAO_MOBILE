@@ -1,5 +1,6 @@
 package com.example.ed09_ate_11.network
 
+import com.example.ed09_ate_11.models.Comentarios
 import com.example.ed09_ate_11.models.Criador
 import com.example.ed09_ate_11.models.Filmes
 import com.example.ed09_ate_11.models.Response
@@ -16,6 +17,6 @@ interface ApiService {
     @GET("items")
     fun listarFilmes(@Query("page") pagina: Int): Call<Response<Filmes>>
 
-   /* @GET("items")
-    fun listarCriador(@Query("page") pagina: Int): Call<Response<Criador>>*/
+    @GET("items")
+    fun listarComentarios(@Query("page") pagina: Int): Call<Response<Comentarios>>
 }

@@ -59,6 +59,7 @@ class FilmesRecyclerAdapter (
             .centerCrop()
             .placeholder(R.drawable.ic_placeholder)
             .into(holder.binding.filmesImgImagem);
+        Log.d(TAG, "Img Filme: ${filme.images?.small}")
     }
 
     /**

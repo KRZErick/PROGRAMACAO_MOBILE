@@ -7,11 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import br.com.koruthos.rickmorty.widgets.adapters.ComentariosRecyclerAdapter
 import com.example.ed09_ate_11.constantes.TAG
 import com.example.ed09_ate_11.databinding.FragmentTela01Binding
 import com.example.ed09_ate_11.databinding.FragmentTela02Binding
+import com.example.ed09_ate_11.models.Comentarios
 import com.example.ed09_ate_11.models.Filmes
 import com.example.ed09_ate_11.models.Response
 import com.example.ed09_ate_11.network.NetworkManager
@@ -24,7 +26,7 @@ class Tela2Fragment : Fragment(){
 
     // Lista com todos os Filmes
 
-    private var mFilmes: MutableList<Filmes> = mutableListOf()
+    private var mComentarios: MutableList<Comentarios> = mutableListOf()
 
 
     // Controle da paginação do webservice
@@ -56,99 +58,114 @@ class Tela2Fragment : Fragment(){
     // Ele permite que todos os fragmentos sejam criados de maneira uniforme, padroniza
     //  a passagem de parametros
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // -- Configuração do recycler view
-        // Define o gerenciador de layout do recycler vi
+        // Inicializa o recycler view
+        mBinding.comentariosRecycler.layoutManager = GridLayoutManager(activity, 2)
 
-        mBinding.filmesRecycler.layoutManager = LinearLayoutManager(activity)
+        // Inicializa o adapter
+        mBinding.comentariosRecycler.adapter = ComentariosRecyclerAdapter(
+            mComentarios,
+            object : ComentariosRecyclerAdapter.Evento {
+                override fun onComentarioClick(comentarios: Comentarios) {
+                    this@Tela2Fragment.onComentariosClick(comentarios)
+                }
+            }
+        )
 
         // Captura o evento de scroll para carregar mais itens na página
-        mBinding.filmesRecycler.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+        mBinding.comentariosRecycler.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
 
                 // Se não for mais possível realizar o scroll para baixo, chama o webservice
                 if (!recyclerView.canScrollVertically(1)) { //1 for down
-                    carregarComentarios()
+                    carregarEpisodios()
                 }
             }
         })
 
-        // -- Webservice
-        // Cria a chamada para o endpoint do webservice
-        carregarComentarios()
+        // Chamada para o webservice
+        // A resposta do webservice vai atualizar o recycler view
+        carregarEpisodios()
+
     }
 
-    private fun carregarComentarios() {
-        Log.d(TAG, "carregarComentarios: ")
 
-        // Verifica se chegou na última página
-        if (mPagina < 0) {
-            Log.i(TAG, "carregarComentarios: Última página - sem dados para carregar")
-            return
+    private fun onComentariosClick(comentarios: Comentarios) {
+    Toast.makeText(activity, comentarios.Comentarista?.comment, Toast.LENGTH_LONG).show()
+}
+
+/**
+ * Chama o webservice para carregar mais episódios.
+ */
+private fun carregarEpisodios() {
+    Log.d(TAG, "carregarEpisodios: ")
+
+    // Verifica se chegou na última página
+    if (mPagina < 0) {
+        Log.i(TAG, "carregarEpisodios: Última página - sem dados para carregar")
+        return
+    }
+
+    Log.d(TAG, "carregarEpisodios: Carregando dados da página $mPagina")
+    val call = NetworkManager.service.listarComentarios(mPagina)
+
+    // Enfileira a execução do webservice e trata a resposta
+    call.enqueue(object : Callback<Response<Comentarios>> {
+
+        // Retorno de sucesso
+        override fun onResponse(
+            call: Call<Response<Comentarios>>,
+            response: retrofit2.Response<Response<Comentarios>>
+        ) {
+            onResponseSuccess(response.body())
         }
 
-        Log.d(TAG, "carregarComentarios: Carregando dados da página $mPagina")
-        val call = NetworkManager.service.listarFilmes(mPagina)
-
-        // Enfileira a execução do webservice e trata a resposta
-        call.enqueue(object : Callback<Response<Filmes>> {
-
-            // Retorno de sucesso
-            override fun onResponse(
-                call: Call<Response<Filmes>>,
-                response: retrofit2.Response<Response<Filmes>>
-            ) {
-                onResponseSuccess(response.body())
+        // Retorno de falha
+        override fun onFailure(call: Call<Response<Comentarios>>, t: Throwable) {
+            Log.e(TAG, "onFailure: ", t)
+            if (context != null) {
+                Toast.makeText(context, t.message, Toast.LENGTH_LONG).show()
             }
+        }
+    })
+}
 
-            // Retorno de falha
-            override fun onFailure(call: Call<Response<Filmes>>, t: Throwable) {
-                Log.e(TAG, "onFailure: ", t)
-                if (context != null) {
-                    Toast.makeText(context, t.message, Toast.LENGTH_LONG).show()
-                }
-            }
-        })
+/**
+ * Função para tratar a mensagem de sucesso do webservice.
+ */
+private fun onResponseSuccess(body: Response<Comentarios>?) {
+    Log.d(TAG, "onResponseSuccess: ")
+
+    // Atualiza qual é a próxima página a ser carregada
+    // - Se for a última página, invalida o contador de páginas para evitar novas chamadas
+    // - Senão, atualiza o contador de páginas
+    if (body?.info?.next == null) {
+        mPagina = -1
+    } else {
+        mPagina++
     }
 
-    /**
-     * Função para tratar a mensagem de sucesso do webservice.
-     */
-    private fun onResponseSuccess(body: Response<Filmes>?) {
-        Log.d(TAG, "onResponseSuccess: ")
+    // Adiciona os resultados obtidos na lista de personagens
+    if (body?.resultados != null) {
+        // Recupera o range da lista
+        val ini = mComentarios.size
+        val qtd = body.resultados.size
 
-        // Atualiza qual é a próxima página a ser carregada
-        // - Se for a última página, invalida o contador de páginas para evitar novas chamadas
-        // - Senão, atualiza o contador de páginas
-        if (body?.info?.next == null) {
-            mPagina = -1
-        } else {
-            mPagina++
-        }
+        // Concatena as duas listas
+        mComentarios.addAll(body.resultados)
+        Log.d(TAG, "onResponseSuccess: ${mComentarios.size}")
 
-        // Adiciona os resultados obtidos na lista de filmes
-        if (body?.resultados != null) {
-            // Recupera o range da lista
-            val ini = mFilmes.size
-            val qtd = mFilmes.size + body.resultados.size
+        // Atualiza o recycler view
+        Log.d(TAG, "onResponseSuccess: Atualizando adapter")
+        Log.d(TAG, "onResponseSuccess: ${mBinding.comentariosRecycler.adapter}")
+        mBinding.comentariosRecycler.adapter?.notifyItemRangeInserted(ini, qtd)
 
-            // Concatena as duas listas
-            mFilmes.addAll(body.resultados)
-            Log.d(TAG, "onResponseSuccess: ${mFilmes.size}")
-
-            // Atualiza o recycler view
-            Log.d(TAG, "onResponseSuccess: Atualizando adapter")
-            Log.d(TAG, "onResponseSuccess: ${mBinding.filmesRecycler.adapter}")
-            mBinding.filmesRecycler.adapter?.notifyItemRangeInserted(ini, qtd)
-
-            // Esconde a tela de loading e exibe o recycler
-            mBinding.filmesRecycler.visibility = View.GONE
-            mBinding.filmesRecycler.visibility = View.VISIBLE
-        }
     }
+}
 
     /** Função estática para a construção dos fragmentos */
     companion object {
